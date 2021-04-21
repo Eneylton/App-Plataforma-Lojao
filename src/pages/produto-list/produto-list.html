@@ -35,7 +35,7 @@
  
 
 
-  <ion-list style="margin-top: 20px;" [virtualScroll]="produtos">
+  <ion-list style="margin-top: 20px;" [virtualScroll]="produtos" no-lines>
     <ion-item-sliding *virtualItem="let item" >
 
       <ion-item>
@@ -53,19 +53,19 @@
       </ion-item>
       
       
-      <ion-item-options side="left">
+      <ion-item-options side="left" no-lines>
 
-        <button ion-button color="light" (click)="detalhe(item.id,
-                                                          item.nome,
-                                                          item.barra,
-                                                          item.codigo,
-                                                          item.qtd,
-                                                          item.valor_compra,
-                                                          item.valor_venda,
-                                                          item.estoque,
-                                                          item.foto,
-                                                          item.aplicacao,
-                                                          item.categorias_id
+        <button ion-button color="vermelho" (click)="detalhe(item.id,
+                                                              item.nome,
+                                                              item.barra,
+                                                              item.codigo,
+                                                              item.qtd,
+                                                              item.valor_compra,
+                                                              item.valor_venda,
+                                                              item.estoque,
+                                                              item.foto,
+                                                              item.aplicacao,
+                                                              item.categorias_id
                                                   
 
                                                         )">
