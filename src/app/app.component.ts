@@ -24,7 +24,7 @@ export class MyApp {
         this.pages = [
           { title: 'Home', component:          'HomePage' },    
           { title: 'Produto', component:       'ProdutoListPage' },
-          { title: 'Categotia', component:     'CategoriaListarPage' },     
+          { title: 'Categotia', component:     'CategoriaListPage' },     
           { title: 'Marcas', component:        'MarcaListarPage' },
           { title: 'Modelo', component:        'ModeloListarPage' },
           { title: 'Fabricante', component:    'FabriListarPage' },

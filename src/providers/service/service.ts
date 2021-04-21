@@ -8,7 +8,7 @@ import 'rxjs/add/operator/timeout';
 export class ServiceProvider {
 
   
-    serve: string = 'http://192.168.100.19/PHP/Plataforma/';
+    serve: string = 'http://192.168.100.19/PHP/Plataforma-Lojao/';
     //serve: string = 'http://192.168.100.18/Servidores/Sevidor-Oficina/';
 
   constructor(public http: HttpClient) { }

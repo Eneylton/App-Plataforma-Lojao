@@ -37,12 +37,25 @@
         <ion-input placeholder="Código" [(ngModel)]="codigo" type="text"></ion-input>
        
         </ion-item>
+      
+        <ion-row>
+          <ion-col col-9>
+            <ion-item>
+
+              <ion-input style="margin-left:-5px" placeholder="Código de Barras" [(ngModel)]="scanerData.text" type="text"></ion-input>
+
+            </ion-item>
+           </ion-col>
+           <ion-col col-3>
+            <ion-item no-lines>
+
         
-        <ion-item>
-          
-          <ion-input placeholder="Código de Barras" [(ngModel)]="barra" type="text"></ion-input>
-		 
-        </ion-item>
+              <button ion-button item-start outline color="danger" (click)="scan()"><i class="fa fa-barcode" aria-hidden="true"></i></button>
+           
+
+            </ion-item>
+           </ion-col>
+        </ion-row>
 
         <ion-item>
           <ion-input placeholder="Nome" [(ngModel)]="nome" type="text"></ion-input>

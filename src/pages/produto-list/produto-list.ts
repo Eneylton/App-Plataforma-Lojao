@@ -85,7 +85,7 @@ listarProdutos() {
 
         });
 
-        console.log(JSON.stringify(this.produtos));
+     
 
       }
 

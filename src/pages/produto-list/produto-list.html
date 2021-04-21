@@ -15,6 +15,10 @@
     </ion-buttons>
 
   </ion-navbar>
+  <ion-searchbar placeholder="Pesquisar" showCancelButton="true" 
+  (ionCancel)="isSearchbarOpened=false"
+  (ionInput)="getProdutos($event)">
+  </ion-searchbar>
 </ion-header>
 
 <ion-content>
@@ -28,10 +32,7 @@
 
   </ion-refresher>
 
-  <ion-searchbar placeholder="Pesquisar" showCancelButton="true" 
-  (ionCancel)="isSearchbarOpened=false"
-  (ionInput)="getProdutos($event)">
-  </ion-searchbar>
+ 
 
 
   <ion-list style="margin-top: 20px;" [virtualScroll]="produtos">

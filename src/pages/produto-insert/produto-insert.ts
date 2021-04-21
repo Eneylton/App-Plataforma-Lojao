@@ -3,6 +3,8 @@ import { ActionSheetController, AlertController, IonicPage, NavController, NavPa
 import { Storage } from '@ionic/Storage';
 import { ServiceProvider } from '../../providers/service/service';
 import { Camera, CameraOptions   } from '@ionic-native/camera';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 
 
 @IonicPage({})
@@ -27,10 +29,15 @@ export class ProdutoInsertPage {
   categorias:        any = [];
   base64Image:       string = "";
   cameraData:        string;
+  options: BarcodeScanner;
+  encodeText:string="";
+  encodeData: any={};
+  scanerData: any={};
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private camera: Camera,public actionSheetCtrl: ActionSheetController,
                                              private serve: ServiceProvider,public alertCtrl: AlertController,
+                                             private barcodeScanner: BarcodeScanner,
                                              private storage: Storage,public toastyCrtl: ToastController) {
                                              
   }
@@ -48,6 +55,20 @@ export class ProdutoInsertPage {
     
     });
   }
+
+  scan(){
+
+    this.barcodeScanner.scan().then((data)=>{
+  
+      this.scanerData = data;
+  
+    }, (err) => {
+  
+      console.log("error: ", err );
+      
+    });
+  }
+
 
  
 listarCategoria() {
@@ -154,10 +175,11 @@ abrirGaleria() {
   let body = {
     
     codigo:           this.codigo,
-    barra:            this.barra,
+    barra:            this.scanerData.text,
     nome:             this.nome,
     qtd:              1,
     aplicacao:        this.aplicacao,
+
     foto:             this.cameraData,
     valor_venda:      this.valor_venda,
     valor_compra:     this.valor_compra,
